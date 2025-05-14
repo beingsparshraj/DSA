@@ -26,12 +26,40 @@ public class circular_queue_array {
             return;
         }
 //        add 1st element
-if(front == -1
-)
+        if (front == -1) {
+            front = 0;
+        }
+        rear = (rear + 1) % size;
+        arr[rear] = data;
+    }
+
+//    remove function is circular linked list
+
+    public static int remove() {
+        if (isEmpty()) {
+            System.out.println("empty queue");
+            return -1;
+        }
+        int result = arr[front];
+        if (rear == front) {
+            rear = front = -1;
+        } else {
+            front = (front + 1) % size;
+        }
+        return arr[front];
     }
 
 
     public static void main(String[] args) {
+        Queue q = new Queue(5);
+        q.add(1);
+        q.add(2);
+        q.add(3);
+
+        while (!q.isEmpty()) {
+            System.out.println(q.peek());
+            q.remove();
+        }
 
     }
 }
