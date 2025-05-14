@@ -19,7 +19,16 @@ public class circular_queue_array {
         return (rear + 1) % size == front;
     }
 
-//    enqueue
+    //    enqueue
+    public static void add(int data) {
+        if (isFull()) {
+            System.out.println("full circular queue");
+            return;
+        }
+//        add 1st element
+if(front == -1
+)
+    }
 
 
     public static void main(String[] args) {
